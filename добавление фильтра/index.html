@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная карта Екатеринбурга с музеями</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=d3e575a2-21f0-4c40-9084-e62496f8cd32&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <!-- Кнопка "Рубрикатор" -->
+    <button id="show-rubricator-btn" style="position: absolute; top: 55px; right: 10px; padding: 8px 12px; background-color: rgba(255, 255, 255, 0.7); border: none; border-radius: 4px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); cursor: pointer; z-index: 1000; font-family: Arial, sans-serif; font-size: 14px; transition: all 0.3s ease;">
+        Фильтр
+    </button>
+    
+    <!-- Кнопка "Очистить маршрут" -->
+    <button id="clear-route-btn" style="position: absolute; top: 55px; left: 10px; padding: 8px 12px; background-color: rgba(220, 220, 220, 0.7); border: none; border-radius: 4px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); cursor: pointer; z-index: 1000; font-family: Arial, sans-serif; font-size: 14px; transition: all 0.3s ease; display: none;">
+        Очистить маршрут
+    </button>
+    
+    <!-- Рубрикатор (изначально скрыт) -->
+    <div class="rubricator" id="rubricator" style="display: none;">
+        <h3>Фильтр</h3>
+        <button class="rubricator-btn active" data-category="all">Все</button>
+        <button class="rubricator-btn" data-category="природа">Природа</button>
+        <button class="rubricator-btn" data-category="архитектура">Архитектура</button>
+        <button class="rubricator-btn" data-category="искусство">Искусство</button>
+        <button class="rubricator-btn" data-category="история">История</button>
+    </div>
+    
+    <div class="fullscreen-image">
+        <span class="close-btn">&times;</span>
+        <img id="full-image" src="" alt="Полноразмерное изображение">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
